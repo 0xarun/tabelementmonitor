@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab Element Monitor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Tab Element Monitor</h1>
+
+      <label>
+        URL
+        <input id="url" type="url" placeholder="https://example.com/page" required />
+      </label>
+
+      <label>
+        CSS Selector
+        <input id="selector" type="text" placeholder="#alert-count" required />
+      </label>
+
+      <label>
+        Mode
+        <select id="mode">
+          <option value="live">Live Observer</option>
+          <option value="refresh">Auto Refresh</option>
+        </select>
+      </label>
+
+      <label>
+        Refresh Interval (seconds, min 60)
+        <input id="refreshIntervalSeconds" type="number" min="60" value="60" />
+      </label>
+
+      <label>
+        Notification Repeat Count (1-5)
+        <input id="notificationRepeatCount" type="number" min="1" max="5" value="1" />
+      </label>
+
+      <label>
+        Notification Delay (seconds)
+        <input id="notificationDelaySeconds" type="number" min="1" value="5" />
+      </label>
+
+      <label class="checkbox-row">
+        <input id="increaseOnly" type="checkbox" />
+        Notify only when value increases
+      </label>
+
+      <label class="checkbox-row">
+        <input id="soundEnabled" type="checkbox" checked />
+        Enable sound
+      </label>
+
+      <div class="button-row">
+        <button id="startBtn" type="button">Start Monitoring</button>
+        <button id="stopBtn" type="button" class="secondary">Stop Monitoring</button>
+      </div>
+
+      <section class="status-box">
+        <div><strong>Status:</strong> <span id="status">Stopped</span></div>
+        <div><strong>Last Value:</strong> <span id="lastValue">N/A</span></div>
+        <div class="error" id="error"></div>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
