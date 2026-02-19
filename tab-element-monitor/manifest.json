@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Element Monitor",
+  "description": "Monitor one element on one exact URL and notify when content changes.",
+  "version": "1.0.0",
+  "permissions": ["activeTab", "storage", "notifications", "scripting"],
+  "optional_host_permissions": ["https://*/*", "http://*/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Tab Element Monitor",
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["sound.mp3", "icon.svg"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
